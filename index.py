@@ -1,13 +1,14 @@
-import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.figure import Figure
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
-import sympy as sp
-import tkinter as tk
-from tkinter import ttk, messagebox
-from matplotlib.patches import Rectangle
 import threading
 import time
+import tkinter as tk
+from tkinter import ttk, messagebox
+
+import matplotlib.pyplot as plt
+import numpy as np
+import sympy as sp
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+from matplotlib.figure import Figure
+from matplotlib.patches import Rectangle
 
 
 class BisectionMethodGUI:
@@ -223,7 +224,7 @@ class BisectionMethodGUI:
                     self.result_text.delete(1.0, tk.END)
                     self.result_text.insert(tk.END, error_msg)
                     messagebox.showwarning("Invalid Interval",
-                                       f"f(a) and f(b) must have opposite signs to guarantee a root in the interval. {fa * fb}")
+                                           f"f(a) and f(b) must have opposite signs to guarantee a root in the interval. {fa * fb}")
                     return
 
                 # Perform bisection method
